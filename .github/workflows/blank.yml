@@ -4,7 +4,7 @@ jobs:
   build:
     name: ONTA
     runs-on: 
-      group: ent/monyong
+      group: monyong
       labels: cicak
 
     strategy:
