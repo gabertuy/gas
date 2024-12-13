@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: buyanyo
+    runs-on: cok
     strategy:
       max-parallel: 20
       fail-fast: false
