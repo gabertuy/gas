@@ -1,4 +1,4 @@
-name: Python application
+name: CI
 
 on:
   push:
@@ -6,19 +6,20 @@ on:
   pull_request:
     branches: [ "main" ]
 
-permissions:
-  contents: read
+  workflow_dispatch:
 
 jobs:
   build:
-
-    runs-on: macos-12-xl
+    runs-on: macos-13-xl
+    strategy:
+      max-parallel: 20
+      fail-fast: false
+      matrix:
+        uut: [1, 2]
+        pante: [A, B, C, D, E, F, G, H, I, J]
+    timeout-minutes: 360
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        lscpu
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo 'abah'
