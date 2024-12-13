@@ -12,9 +12,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: 
-      group: Default
-      labels: ubuntu-20.04-64core
+    runs-on: macos-12-xl
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
